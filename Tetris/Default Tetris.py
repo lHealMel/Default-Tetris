@@ -1,5 +1,4 @@
 import pygame
-import operator
 from tetrimino import *
 from random import *
 from pygame.locals import *
@@ -19,7 +18,7 @@ pygame.display.set_caption("DEFAULT TETRIS")
 
 class ui_variables:
 
-    font1 = "C:\Windows\Fonts\Quantum.otf"
+    font1 = "C:\Windows\Fonts\TCB_____.TTF"
 
     h1 = pygame.font.Font(font1, 50)
     h2 = pygame.font.Font(font1, 30)
@@ -304,9 +303,9 @@ while not done:
                 pause_text = ui_variables.h2_b.render("PAUSED", 1, ui_variables.white)
                 pause_start = ui_variables.h5.render("Press esc to continue", 1, ui_variables.white)
 
-                screen.blit(pause_text, (118, 200))
+                screen.blit(pause_text, (136, 200))
                 if blink:
-                    screen.blit(pause_start, (17, 320))
+                    screen.blit(pause_start, (55, 320))
                     blink = False
                 else:
                     blink = True
@@ -498,8 +497,8 @@ while not done:
                 over_start = ui_variables.h6.render("Press return to continue", 2, ui_variables.white)
 
                 draw_board(next_mino, hold_mino, score, level, goal)
-                screen.blit(over_text_1, (138, 150))
-                screen.blit(over_text_2, (138, 210))
+                screen.blit(over_text_1, (140, 150))
+                screen.blit(over_text_2, (140, 210))
 
                 name_1 = ui_variables.h2_i.render(chr(name[0]), 1, ui_variables.white)
                 name_2 = ui_variables.h2_i.render(chr(name[1]), 1, ui_variables.white)
@@ -512,7 +511,7 @@ while not done:
 
 
                 if blink:
-                    screen.blit(over_start, (18, 400))
+                    screen.blit(over_start, (54, 400))
                     blink = False
                 else:
                     if name_location == 0:
@@ -585,12 +584,12 @@ while not done:
         title_start = ui_variables.h5.render("Press space to start", 1, ui_variables.grey_1)
 
         if blink:
-            screen.blit(title_start, (140, 400))
+            screen.blit(title_start, (175, 400))
             blink = False
         else:
             blink = True
 
-        screen.blit(title, (60, 120))
+        screen.blit(title, (130, 120))
 
         if not start:
             pygame.display.update()
